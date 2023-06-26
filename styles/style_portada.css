@@ -1,0 +1,199 @@
+
+.body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.body .img {
+  width: 300px;
+  height: 300px;
+  transition: 0.7s ease all;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  background-color: black;
+  transform: scale(0.5);
+}
+.body .img:hover {
+  transform: scale(1);
+  cursor: pointer;
+  animation: 0.7s clip linear forwards;
+}
+.body .form {
+  display: none;
+  margin-top: 25%;
+}
+.body .active {
+  position: absolute;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.body .active input {
+  padding: 0.4rem;
+  border: none;
+  transition: 0.5s;
+}
+.body .active input:focus {
+  border: none;
+  background: rgba(0, 0, 0, 0.838);
+  font-family: "Courier New", Courier, monospace;
+  color: green;
+  font-weight: 800;
+}
+.body .active span {
+  font-family: "Courier New", Courier, monospace;
+  color: green;
+  font-weight: bold;
+  text-decoration: overline;
+}
+.body .active button {
+  padding: 0.5rem;
+  border: none;
+  transition: 0.3s;
+}
+.body .active button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.838);
+  color: green;
+}
+.body .inactive {
+  width: 300px;
+  height: 300px;
+  transition: 0.7s ease all;
+  background-color: black;
+  transform: scale(0.5);
+}
+.body .inactive:hover {
+  transform: scale(0.5);
+  animation: none;
+}
+
+h1 {
+  position: absolute;
+  color: white;
+  font-size: 4rem;
+}
+h1:hover {
+  cursor: pointer;
+}
+
+.uno {
+  text-shadow: -1px -1px 0 rgb(33, 76, 169), -1px 1px 0 white, 1px 1px 0 white, -1px 1px 0 white;
+}
+
+.dos {
+  animation: waves 2s ease-in-out infinite;
+  color: #587de6;
+}
+
+@keyframes waves {
+  0%, 100% {
+    clip-path: polygon(0% 27%, 30% 48%, 33% 54%, 54% 60%, 70% 61%, 84% 59%, 100% 20%, 100% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 60%, 15% 65%, 34% 65%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
+}
+.toggleLight {
+  width: 30px;
+  height: 30px;
+  background-image: url("/img/moon.png");
+  background-size: cover;
+  position: absolute;
+  top: 5%;
+}
+.toggleLight:hover {
+  cursor: pointer;
+}
+
+.formDark {
+  position: absolute;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.formDark input {
+  padding: 0.4rem;
+  border: none;
+  transition: 0.5s;
+}
+.formDark input:focus {
+  border: none;
+  background: rgba(210, 50, 50, 0.838);
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(219, 219, 219);
+  font-weight: 800;
+}
+.formDark span {
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(219, 219, 219);
+  font-weight: bold;
+  text-decoration: overline;
+}
+.formDark button {
+  padding: 0.5rem;
+  border: none;
+  transition: 0.3s;
+}
+.formDark button:hover {
+  cursor: pointer;
+  background-color: rgba(210, 50, 50, 0.838);
+  color: rgb(219, 219, 219);
+}
+
+.toggleDark {
+  width: 30px;
+  height: 30px;
+  background-image: url("/img/sun.png");
+  background-size: cover;
+  position: absolute;
+  top: 5%;
+}
+.toggleDark:hover {
+  cursor: pointer;
+}
+
+.mode img {
+  position: absolute;
+  top: 3rem;
+  width: 50px;
+}
+.mode img:hover {
+  cursor: pointer;
+}
+
+.dark {
+  background-color: black;
+}
+
+.error {
+  animation: error 0.4s linear forwards;
+}
+
+@keyframes error {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.err {
+  border-bottom: 1px solid red;
+}
+
+/*# sourceMappingURL=style_portada.css.map */
