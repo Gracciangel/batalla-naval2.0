@@ -1,4 +1,3 @@
-
 .body {
   margin: 0;
   display: flex;
@@ -194,6 +193,12 @@ h1:hover {
 }
 .err {
   border-bottom: 1px solid red;
+}
+
+.transition {
+  background-color: black;
+  transition: .5s;
+  opacity: 100;
 }
 
 /*# sourceMappingURL=style_portada.css.map */

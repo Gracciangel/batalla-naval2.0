@@ -41,7 +41,12 @@ body{
     border: 1.5px solid green;
     box-shadow: 0px 0px 27px -2px green;
     background-color: black ;
-    display: inline-block
+    display: inline-block ;
+    &:hover{
+        cursor:crosshair;
+        transform: scale(1.03);
+        background-color: green;
+    }
 }
 .title{
     margin-top: 1rem;
@@ -55,16 +60,8 @@ body{
 .position{
     display: inline-block;
 }
-.horizontal{
-    width: 35px;
-    height: 15px;
-    border: black 0.5px solid;
-}
-.vertical{
-    width: 15px;
-    height: 35px;
-    border: black 0.5px solid;
-    margin-top: 5px;
+#radar{
+    display: none;
 }
 .selected{
     background-color: blue;
@@ -85,30 +82,55 @@ body{
         flex-direction: column;
         align-items: center;
         gap: .5rem;
-        .img{
-            transition: .5s;
-            width: 50px ; 
-            &:hover{
-                cursor: pointer;
-                transform: scale(1.1);        
+        .imgBarcos{
+            display: flex;
+            gap: .5rem ;
+         
 
-            }
         }
+     
     }
     span{
-        color: white;
+        color: red;
+        text-shadow: 0px 0px 15px green;
+        font-family: 'Courier New', Courier, monospace;
 
     }
 }
+.position{
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    .vertical{
+        rotate: 90deg;
+    }
+    img{
+        width: 50px;
+        &:hover{
+            cursor: pointer;
+            border-radius: 15px;
+            border: solid 1px white;
+        }
+    }
+}
+.position{
+    img:nth-child(2){
+        rotate: -90deg;
+    }
+}
+
 .container{
     margin-left: 4%;
 }
 .header{
 display: flex;
 flex-direction: column;
+align-items: center;
+justify-content: space-around;
 .buttons{
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    gap: 12rem;
    .button{
         padding: .5rem;
         border: none;
@@ -121,7 +143,11 @@ flex-direction: column;
             background-color: green;
             cursor: pointer;
         }
-   
+        
+}
+span{
+    color: green;
+    font-family: 'Courier New', Courier, monospace;
 }
 }   
 
@@ -178,8 +204,8 @@ h4{
     margin: 13% 30%;
     position: absolute;
     background-color: red;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height:10px;
     border-radius: 17px;
     opacity: 80%;
     animation: boat 6s linear infinite;
@@ -232,18 +258,6 @@ h4{
 
 }
 
-.noty_body{
-    background-color: #000;
-    box-shadow: 0px 0px 10px 3px rgb(242, 0, 255);
-    color: green;
-    font-family: 'Courier New', Courier, monospace;
-    margin: 31rem;
-    margin-left: 50rem;
-    margin-top: 30%;
-    width: 300px;
-    border: 1px solid black;
-    border-radius: 15px;
-}
   @keyframes boat{
     0%{
 

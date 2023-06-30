@@ -41,8 +41,7 @@ function validation (){
                 }, 1000)
               
             }else{
-                
-                window.location.href='./play.html'
+                window.location.href = './play.html';
     
             }
             
@@ -54,6 +53,7 @@ function validation (){
     
 }
 
+  
  
 let body = document.getElementById('body')
 let form = document.getElementById('form')

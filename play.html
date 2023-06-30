@@ -1,233 +1,104 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="node_modules/noty/lib/noty.css" />
-        <link rel="stylesheet" href="./styles/battle.css" />
-        <title>BattleShip Game</title>
-    </head>
-    <body>
-        
-        <header class=" header">
-            <h1 class="title">Battle Ship</h1>
-         
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./img/porta-aviones.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/battle.css" />
+    <title>BattleShip Game</title>
+</head>
+
+<body>
+    <!-- audio del juego -->
+    <audio autoplay loop>
+        <source src="./sound/audio.mpeg">
+    </audio>
+    <header class=" header">
+        <h1 class="title">Battle Ship</h1>
+
         <div class="buttons">
             <button class="button" id="button" onclick="startGame()">Iniciar Partida</button>
-            <button class="button" onclick="window.location.reload()" >Restart</button>
+            <span id="countPc">puntos pc: </span>
+            <span id="count">puntos:</span>
+            <button class="button" onclick="window.location.reload()">Restart</button>
         </div>
-        </header>
-        <h3 class="subTitle">Selecciona la posición de tus naves</h3>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div id="board">
-                        <img class="img1" src="./img/battleship.png" alt="">
-                        <img class="img2" src="./img/submarine.png" alt="">
-                    </div>
-                </div>
-                <div class="radar">
-                    <div class="grid-radar">
-                        <div id="boatGrid"></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="scan-line"></div>
-                  </div>
-                <div class="col">
-                    <div id="boardAttack">
-                    </div>
+    </header>
+    <h3 class="subTitle">Selecciona la posición de tus naves</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="board">
+
                 </div>
             </div>
+            <div class="radar" id="radar">
+                <div class="grid-radar">
+                    <div id="boatGrid"></div>
+
+                </div>
+                <div class="scan-line"></div>
+            </div>
+            <div class="col">
+                <div id="boardAttack">
+
+                </div>
+            </div>
+        </div>
         <!-- ships -->
-       
+
         <div id="ships" class=" naves">
-           
-            <div class="col"> 
+
+            <div class="col">
                 <div class="divCol">
-                    <span>Portaviones</span>
+                    <span>Porta-Aviones</span>
                     <span>Tamaño: 5</span>
-                    <img name="Portaviones" class="img" src="./img/aircraft-carrier.png" alt="">
-                    
+                    <div class="position"></div>
+                    <div class="imgBarcos">
+                    </div>
                 </div>
-                
+
             </div>
-            <div class="col"> 
-                <div  class="divCol">
+            <div class="col">
+                <div class="divCol">
                     <span>Acorazado</span>
                     <span>Tamaño: 4</span>
-                    <img name="Acorazado" class="img" src="./img/battleship.png" alt="">
+                    <div class="position"></div>
+                    <div class="imgBarcos">
+                    </div>
                 </div>
-                
+
             </div>
-            <div class="col"> 
+            <div class="col">
                 <div class="divCol">
                     <span>Submarino</span>
                     <span>Tamaño: 3</span>
-                    <img name="Submarino" class="img" src="./img/submarine.png" alt="">
+                    <div class="imgBarcos">
+                        <div class="position"></div>
+                    </div>
                 </div>
-                
+
             </div>
-            <div class="col"> 
+            <div class="col">
                 <div class="divCol">
                     <span>Destructor</span>
                     <span>Tamaño: 2</span>
-                    <img name="Destructor" class="img" src="./img/ship.png" alt="">
+                    <div class="imgBarcos">
+                        <div class="position">
+
+                        </div>
+
+
+                    </div>
                 </div>
-                
-            </div>           
+
+            </div>
         </div>
-        </div>
-        
-        <script src="node_modules/noty/lib/noty.js"></script>
-        <script  src="battle.js"></script>
-    </body>
+    </div>
+
+
+    <script src="battle.js"></script>
+</body>
+
 </html>
